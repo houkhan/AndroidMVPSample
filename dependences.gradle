@@ -1,0 +1,51 @@
+ext {
+    /*android开发版本配置*/
+    android = [
+            compileSdkVersion: 28,
+            buildToolsVersion: "28.0.3",
+            applicationId    : "com.thescar.mvp",
+            minSdkVersion    : 21,
+            targetSdkVersion : 28,
+            /*应用秘钥*/
+            keyAlias         : "androidadmin",
+            keyPassword      : "admin123",
+            storeFile        : "D:/Android/key/android.jks",
+            storePassword    : "admin123456",
+            /*应用版本*/
+            versionCode      : 1,
+            versionName      : "1.0",
+    ]
+
+    /*依赖版本*/
+    dependenciesVersion = [
+            "appcompatVersion"                : "1.0.2",
+            "constraintlayoutVersion"         : "1.1.3",
+            "androidutilsVersion"             : "1.0.6",
+            "butterknifeVersion"              : "10.2.0",
+            "retrofit2Version"                : "2.3.0",
+            "okhttp3LoggingInterceptorVersion": "3.9.1",
+            "rxjava2Version"                  : "2.1.11",
+            "rxjava2RxandroidVersion"         : "2.0.2",
+            "blankjUtilcodexVersion"          : "1.26.0",
+            "qmuiVersion"                     : "2.0.0-alpha02",
+            "SmartRefreshVersion"             : "1.1.0",
+    ]
+
+    /*依赖地址*/
+    dependencies = [
+            "androidxAppcompat"        : "androidx.appcompat:appcompat:${dependenciesVersion["appcompatVersion"]}",
+            "androidxConstraintlayout" : "androidx.constraintlayout:constraintlayout:${dependenciesVersion["constraintlayoutVersion"]}",
+            "butterknife"              : "com.jakewharton:butterknife:${dependenciesVersion["butterknifeVersion"]}",
+            "butterknifeCompiler"      : "com.jakewharton:butterknife-compiler:${dependenciesVersion["butterknifeVersion"]}",
+            "retrofit2"                : "com.squareup.retrofit2:retrofit:${dependenciesVersion["retrofit2Version"]}",
+            "retrofit2ConverterGson"   : "com.squareup.retrofit2:converter-gson:${dependenciesVersion["retrofit2Version"]}",
+            "retrofit2AdapterRxjava2"  : "com.squareup.retrofit2:adapter-rxjava2:${dependenciesVersion["retrofit2Version"]}",
+            "okhttp3LoggingInterceptor": "com.squareup.okhttp3:logging-interceptor:${dependenciesVersion["okhttp3LoggingInterceptorVersion"]}",
+            "rxjava2"                  : "io.reactivex.rxjava2:rxjava:${dependenciesVersion["rxjava2Version"]}",
+            "rxjava2Rxandroid"         : "io.reactivex.rxjava2:rxandroid:${dependenciesVersion["rxjava2RxandroidVersion"]}",
+            "blankjUtilcodex"          : "com.blankj:utilcodex:${dependenciesVersion["blankjUtilcodexVersion"]}",
+            "qmui"                     : "com.qmuiteam:qmui:${dependenciesVersion["qmuiVersion"]}",
+            "SmartRefreshLayout"       : "com.scwang.smartrefresh:SmartRefreshLayout:${dependenciesVersion["SmartRefreshVersion"]}",
+            "SmartRefreshHeader"       : "com.scwang.smartrefresh:SmartRefreshHeader:${dependenciesVersion["SmartRefreshVersion"]}",
+    ]
+}

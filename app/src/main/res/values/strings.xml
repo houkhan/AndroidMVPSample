@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AndroidMVPDemo</string>
+    <string name="mine">我的</string>
+    <string name="space">空间</string>
+    <string name="friends">朋友</string>
+    <string name="message">消息</string>
+</resources>

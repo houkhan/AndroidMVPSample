@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color> <!-- 白色 -->
+    <color name="black">#000000</color> <!-- 黑色 -->
+    <color name="gray">#707070</color> <!-- 灰色 -->
+    <color name="blue">#1296db</color> <!-- 蓝色 -->
+</resources>

@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.thescar.mvp.view.CustomViewPager
+        android:id="@+id/home_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <RadioGroup
+        android:id="@+id/home_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/home_rb_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/message_select_status"
+            android:gravity="center"
+            android:text="@string/message"
+            android:textColor="@drawable/home_select_text" />
+
+        <RadioButton
+            android:id="@+id/home_rb_friends"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/friends_select_status"
+            android:gravity="center"
+            android:text="@string/friends"
+            android:textColor="@drawable/home_select_text" />
+
+        <RadioButton
+            android:id="@+id/home_rb_space"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/space_select_status"
+            android:gravity="center"
+            android:text="@string/space"
+            android:textColor="@drawable/home_select_text" />
+
+        <RadioButton
+            android:id="@+id/home_rb_mine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/mine_select_status"
+            android:gravity="center"
+            android:text="@string/mine"
+            android:textColor="@drawable/home_select_text" />
+    </RadioGroup>
+</LinearLayout>

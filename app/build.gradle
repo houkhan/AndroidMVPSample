@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+android {
+    signingConfigs {
+        release {
+            keyAlias rootProject.ext.android.keyAlias
+            keyPassword rootProject.ext.android.keyPassword
+            storeFile file(rootProject.ext.android.storeFile)
+            storePassword rootProject.ext.android.storePassword
+        }
+    }
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            // 混淆
+            minifyEnabled true
+            // Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            signingConfig signingConfigs.release
+            jniDebuggable false
+            lintOptions {
+                checkReleaseBuilds false
+                abortOnError false
+            }
+        }
+
+        debug {
+            // 混淆
+            minifyEnabled false
+            // Zipalign优化
+            zipAlignEnabled false
+            // 移除无用的resource文件
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release //此处为选择在debug运行时一样有release签名，可以方便测试部分功能
+            jniDebuggable true
+            lintOptions {
+                checkReleaseBuilds false
+                abortOnError false
+            }
+        }
+    }
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                if (buildType.name == 'release') {
+                    //修改生成的apk输出路径
+                    variant.getPackageApplicationProvider().get().outputDirectory = new File("E:/APK/Release/")
+                    //修改生成的apk文件的名字
+                    outputFileName = "${variant.name}_${buildType.name}_v${variant.versionName}_${releaseTime()}.apk"
+                }
+            }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation rootProject.ext.dependencies["androidxAppcompat"]
+    implementation rootProject.ext.dependencies["androidxConstraintlayout"]
+    implementation rootProject.ext.dependencies["retrofit2"]
+    implementation rootProject.ext.dependencies["okhttp3LoggingInterceptor"]
+    implementation rootProject.ext.dependencies["retrofit2ConverterGson"]
+    implementation rootProject.ext.dependencies["retrofit2AdapterRxjava2"]
+    implementation rootProject.ext.dependencies["rxjava2"]
+    implementation rootProject.ext.dependencies["rxjava2Rxandroid"]
+    implementation rootProject.ext.dependencies["blankjUtilcodex"]
+    implementation rootProject.ext.dependencies["qmui"]
+    implementation rootProject.ext.dependencies["butterknife"]
+    implementation rootProject.ext.dependencies["SmartRefreshLayout"]
+    implementation rootProject.ext.dependencies["SmartRefreshHeader"]
+    annotationProcessor rootProject.ext.dependencies["butterknifeCompiler"]
+}
+
+def releaseTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
+}
