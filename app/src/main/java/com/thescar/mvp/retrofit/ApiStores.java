@@ -1,11 +1,13 @@
 package com.thescar.mvp.retrofit;
 
-import com.thescar.mvp.model.MainModel;
+import com.thescar.mvp.App.OverallConstants;
+import com.thescar.mvp.model.JokeModel;
 
 import io.reactivex.Observable;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+
 /**
  * @Author :TheScar
  * @Date :2019/12/10 13:19
@@ -16,16 +18,17 @@ public interface ApiStores {
 
     /*是否正式接口*/
     boolean ISONLINE = true;
+    String KEY = "9653a90da9c61b2462d3497d7e423b59";
+
 
     /*BaseUrl*/
-    String Host = ISONLINE ? "http://www.weather.com.cn/"
-            : "http://www.weather.com.cn/TEST";
+    String Host = ISONLINE ? "http://v.juhe.cn/" : "http://www.weather.com.cn/TEST";
 
-    /*加载天气*/
-    @GET("adat/sk/{cityId}.html")
-    Call<MainModel> loadDataByRetrofit(@Path("cityId") String cityId);
-
-    /*加载天气*/
-    @GET("adat/sk/{cityId}.html")
-    Observable<MainModel> loadDataByRetrofitRxJava(@Path("cityId") String cityId);
+    /**
+     * 获取随机笑话
+     *
+     * @return
+     */
+    @GET("joke/randJoke.php?key=" + KEY)
+    Observable<JokeModel> getJoker();
 }

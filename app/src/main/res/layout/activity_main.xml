@@ -1,6 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <com.thescar.mvp.view.CustomViewPager
@@ -25,7 +26,7 @@
             android:checked="true"
             android:drawableTop="@drawable/message_select_status"
             android:gravity="center"
-            android:text="@string/message"
+            android:text="@string/joke"
             android:textColor="@drawable/home_select_text" />
 
         <RadioButton

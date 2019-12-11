@@ -7,10 +7,10 @@ ext {
             minSdkVersion    : 21,
             targetSdkVersion : 28,
             /*应用秘钥*/
-            keyAlias         : "androidadmin",
-            keyPassword      : "admin123",
-            storeFile        : "D:/Android/key/android.jks",
-            storePassword    : "admin123456",
+            keyAlias         : "androiddemo",
+            keyPassword      : "androiddemo456",
+            storeFile        : "D:/Android/key/androiddemo.jks",
+            storePassword    : "androiddemo123",
             /*应用版本*/
             versionCode      : 1,
             versionName      : "1.0",

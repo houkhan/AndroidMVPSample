@@ -5,12 +5,9 @@ import android.widget.RadioGroup;
 
 import com.thescar.mvp.R;
 import com.thescar.mvp.adapter.ViewPagerAdapter;
-import com.thescar.mvp.base.MainBaseView;
-import com.thescar.mvp.model.MainModel;
-import com.thescar.mvp.presenter.MainPresenter;
-import com.thescar.mvp.base.MvpBaseActivity;
+import com.thescar.mvp.ui.base.BaseActivity;
 import com.thescar.mvp.ui.fragment.FriendsFragment;
-import com.thescar.mvp.ui.fragment.MessageFragment;
+import com.thescar.mvp.ui.fragment.JokeFragment;
 import com.thescar.mvp.ui.fragment.MineFragment;
 import com.thescar.mvp.ui.fragment.SpaceFragment;
 import com.thescar.mvp.view.CustomViewPager;
@@ -21,13 +18,14 @@ import java.util.List;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 import butterknife.BindView;
+
 /**
  * @Author :TheScar
  * @Date :2019/12/10 13:21
  * @Email :han_shuaishuai@126.com
  * @Description : MainActivity
  */
-public class MainActivity extends MvpBaseActivity implements MainBaseView, RadioGroup.OnCheckedChangeListener,
+public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener,
         ViewPager.OnPageChangeListener {
     @BindView(R.id.home_view_pager)
     CustomViewPager mHomeViewPager;
@@ -51,11 +49,11 @@ public class MainActivity extends MvpBaseActivity implements MainBaseView, Radio
     @Override
     public void initView() {
         mFragments = new ArrayList<>();
-        MessageFragment messageFragment = new MessageFragment();
+        JokeFragment jokeFragment = new JokeFragment();
         FriendsFragment friendsFragment = new FriendsFragment();
         SpaceFragment spaceFragment = new SpaceFragment();
         MineFragment mineFragment = new MineFragment();
-        mFragments.add(messageFragment);
+        mFragments.add(jokeFragment);
         mFragments.add(friendsFragment);
         mFragments.add(spaceFragment);
         mFragments.add(mineFragment);
@@ -66,22 +64,6 @@ public class MainActivity extends MvpBaseActivity implements MainBaseView, Radio
 
     @Override
     public void initData() {
-
-    }
-
-    @Override
-    protected MainPresenter createPresenter() {
-        return null;
-    }
-
-
-    @Override
-    public void getDataSuccess(MainModel model) {
-
-    }
-
-    @Override
-    public void getDataFail(String msg) {
 
     }
 

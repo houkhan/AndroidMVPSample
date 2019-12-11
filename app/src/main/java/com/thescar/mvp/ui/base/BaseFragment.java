@@ -220,9 +220,9 @@ public abstract class BaseFragment extends Fragment implements OverallConstants 
     /**
      * 显示指定加载框
      */
-    public void showProgressDialog(String msg) {
+    public void showProgressDialog(@QMUITipDialog.Builder.IconType int iconType,String msg) {
         if (null == progressDialog) {
-            progressDialog = new QMUITipDialog.Builder(mActivity).setIconType(QMUITipDialog.Builder.ICON_TYPE_LOADING)
+            progressDialog = new QMUITipDialog.Builder(mActivity).setIconType(iconType)
                     .setTipWord(msg)
                     .create(false);
         }

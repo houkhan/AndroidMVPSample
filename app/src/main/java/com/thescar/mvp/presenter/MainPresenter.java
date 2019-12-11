@@ -2,7 +2,7 @@ package com.thescar.mvp.presenter;
 
 import com.thescar.mvp.base.BasePresenter;
 import com.thescar.mvp.base.MainBaseView;
-import com.thescar.mvp.model.MainModel;
+import com.thescar.mvp.model.JokeModel;
 import com.thescar.mvp.retrofit.ApiCallback;
 /**
  * @Author :TheScar
@@ -16,12 +16,12 @@ public class MainPresenter extends BasePresenter<MainBaseView> {
         attachView(view);
     }
 
-    public void loadDataByRetrofitRxjava(String cityId) {
+    public void getJoke() {
         mvpView.showLoading();
-        addSubscription(apiStores.loadDataByRetrofitRxJava(cityId),
-                new ApiCallback<MainModel>() {
+        addSubscription(apiStores.getJoker(),
+                new ApiCallback<JokeModel>() {
                     @Override
-                    public void onSuccess(MainModel model) {
+                    public void onSuccess(JokeModel model) {
                         mvpView.getDataSuccess(model);
                     }
 

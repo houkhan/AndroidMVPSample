@@ -148,9 +148,9 @@ public abstract class BaseActivity extends AppCompatActivity implements OverallC
     /**
      * 显示指定加载框
      */
-    public void showProgressDialog(String msg) {
+    public void showProgressDialog(@QMUITipDialog.Builder.IconType int iconType,String msg) {
         if (null == progressDialog) {
-            progressDialog = new QMUITipDialog.Builder(this).setIconType(QMUITipDialog.Builder.ICON_TYPE_LOADING)
+            progressDialog = new QMUITipDialog.Builder(this).setIconType(iconType)
                     .setTipWord(msg)
                     .create(false);
         }

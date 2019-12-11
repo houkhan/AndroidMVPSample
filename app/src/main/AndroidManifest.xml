@@ -11,6 +11,10 @@
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_config"
         android:theme="@style/AppTheme">
+        <!--适配全面屏-->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1" />
         <activity
             android:name=".ui.activity.MainActivity"
             android:launchMode="singleTask"
