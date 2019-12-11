@@ -10,7 +10,7 @@
 ##哪些优秀框架？
 感谢以下的项目,排名不分先后
 
-* 一个必不可少的Android开发工具类集 [AndroidUtilCode](https://github.com/Blankj/AndroidUtilCode)
+* 一个必不可少的Android开发工具类集 [AndroidUtilCode](https://github.com/Blankj/AndroidUtilCode) 
 * 腾讯爸爸开源,致力于提高项目 UI 开发效率的[QMUI](http://ace.ajax.org/)
 * 一款智能的刷新加载库[SmartRefreshLayout](http://jquery.com)
 * 数据信息来自于[聚合数据](https://www.juhe.cn/)
