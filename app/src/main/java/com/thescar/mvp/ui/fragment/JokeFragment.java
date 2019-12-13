@@ -35,7 +35,6 @@ public class JokeFragment extends MvpBaseFragment<MainPresenter> implements Main
 
     @Override
     protected void onFragmentFirstVisible() {
-        mTextJoker.setMovementMethod(ScrollingMovementMethod.getInstance());
         LogUtils.d("Fragment", "MessageFragment---onFragmentFirstVisible");
     }
 
@@ -63,6 +62,7 @@ public class JokeFragment extends MvpBaseFragment<MainPresenter> implements Main
 
     @Override
     public void getDataSuccess(JokeModel model) {
+        mTextJoker.setMovementMethod(ScrollingMovementMethod.getInstance());
         String joke = model.getResult().get(0).getContent();
         mTextJoker.setText(joke);
     }
