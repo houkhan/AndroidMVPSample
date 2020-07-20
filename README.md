@@ -12,7 +12,7 @@
 
 * 一个必不可少的Android开发工具类集 [AndroidUtilCode](https://github.com/Blankj/AndroidUtilCode) 
 * 腾讯爸爸开源,致力于提高项目 UI 开发效率的[QMUI](https://qmuiteam.com/)
-* 一款智能的刷新加载库[SmartRefreshLayout](http://jquery.com)
+* 一款智能的刷新加载库[SmartRefreshLayout](https://github.com/scwang90/SmartRefreshLayout)
 * 一个详细的吸顶效果[FixedTopBarDemo](https://github.com/flowerthorn/FixedTopBarDemo)
 * 数据信息来自于[聚合数据](https://www.juhe.cn/)
 * 图标来自于[iconfont](https://www.iconfont.cn/)
